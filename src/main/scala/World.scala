@@ -1,5 +1,6 @@
 import scala.io.Source
 import SystemTime._
+import com.github.scala.Machine
 
 object HumanWorld {
 
@@ -46,7 +47,19 @@ object HumanWorld {
 
     val party = new MarriageParty(thingsWhoEat)
 
+    val vm = new Machine(2, 4)
+    //Pass function as a parameter
+    vm.calculateAndSave(usage)
+    vm.calculateAndSendJson(usage)
+
+    val bigVM = Machine(8)
+    bigVM.calculateAndSave(usage)
+
+    val anotherVM = Machine()
+
   }
+
+  def usage(x: Int): Float = x/2
 
   def sayHello(name: String): String = {
     val length = name.length
