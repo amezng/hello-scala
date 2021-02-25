@@ -1,6 +1,6 @@
 import scala.io.Source
 import SystemTime._
-import com.github.scala.Machine
+import com.github.scala.{ConfigFileReader, FileFormat, Machine}
 
 object HumanWorld {
 
@@ -34,6 +34,8 @@ object HumanWorld {
     val thingsWhoEat = Seq(person, crow)
 
     val numbers = IndexedSeq(1, 2, 3, 4)
+    val moreNumbers = IndexedSeq(3,4,5)
+
     val sum = numbers.foldLeft(0){
       case (sum, current) => sum + current
     }
@@ -56,6 +58,9 @@ object HumanWorld {
     bigVM.calculateAndSave(usage)
 
     val anotherVM = Machine()
+    implicit val fdsfsdss = new FileFormat("pdf")
+
+
 
   }
 

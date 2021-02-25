@@ -31,6 +31,6 @@ object Machine {
   def apply(): Machine = new Machine(16, 24)
 }
 
-//Functionality
-//1. Calculate the usage
-// 2. Save the usage in database
+//  Functionality
+//  1. Calculate the usage
+//  2. Save the usage in database
