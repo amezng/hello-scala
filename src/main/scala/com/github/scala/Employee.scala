@@ -1,7 +1,8 @@
 package com.github.scala
 import scalikejdbc._
-
 import scala.util.Try
+
+
 class SimpleEmployee(val name: String, salary: Int, address: String){
   override def toString: String = s"$name has salary of $salary INR and lives in $address"
 }
@@ -45,7 +46,6 @@ object Employee {
         }.single().apply()
 
   }
-
 
 
   def divideBy(num: Int): Option[Float] = {
