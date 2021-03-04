@@ -1,5 +1,9 @@
 package com.github.scala
+import java.util.concurrent.Executors
+
 import scalikejdbc._
+
+import scala.concurrent.ExecutionContext
 import scala.util.Try
 
 
