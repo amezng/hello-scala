@@ -56,6 +56,8 @@ object WithFutures {
       }
 
     }
+  }.recover {
+    case e: Exception => None
   }
 
 }
