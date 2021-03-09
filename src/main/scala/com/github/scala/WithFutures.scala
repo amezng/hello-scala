@@ -121,10 +121,20 @@ object WithFutures {
             )
           }.list().apply()
       }
-
     }
   }.recover {
     case e: Exception => List.empty
+  }
+
+
+
+  //Super type of all the types - is 'Any'
+  def example(x: Int): AnyRef = {
+    if(x < 0) {
+      1
+    } else {
+      List(100)
+    }
   }
 
 

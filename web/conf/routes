@@ -1,0 +1,7 @@
+
+
+#Routes for all requests
+GET             /hello              controllers.WelcomeController.hello
+GET             /say/:name          controllers.WelcomeController.sayMyName(name: String)
+GET             /none               controllers.WelcomeController.noFoundRequest
+GET             /forbidden          controllers.WelcomeController.forbiddenRequest
