@@ -131,7 +131,7 @@ object WithFutures {
   //Super type of all the types - is 'Any'
   def example(x: Int): AnyRef = {
     if(x < 0) {
-      1
+      List(1)
     } else {
       List(100)
     }
