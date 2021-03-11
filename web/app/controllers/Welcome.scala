@@ -1,9 +1,10 @@
 package controllers
 
 import models.EmpDetail
-import play.api.libs.json.Json
+import play.api.libs.json.{Json, OFormat, Reads}
 import play.api.mvc.InjectedController
 import services.{EmployeeService, EmployeeServiceImpl}
+
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -14,6 +15,25 @@ class WelcomeController() extends InjectedController {
 
   def hello = Action { implicit request =>
     Ok("Welcome to play!")
+  }
+
+  case class Person(name: String, age: Int, address: String)
+  /**
+   * Process Json request
+   * @return
+   */
+  def postHello = Action(parse.json){ implicit request =>
+    implicit val personReads: OFormat[Person] = Json.format[Person]
+    val person: Person = request.body.as[Person]
+
+    //example of map key value
+    val kv: Map[String, Int] = Map("a" -> 1,
+    "c" -> 2,
+    "e" -> 3
+    )
+
+    val personMap: Map[String, Person] = Map("person" -> person)
+    Ok(Json.toJson(personMap))
   }
 
   def sayMyName(name: String) = Action {

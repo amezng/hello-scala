@@ -6,3 +6,5 @@ GET             /say/:name          controllers.WelcomeController.sayMyName(name
 GET             /none               controllers.WelcomeController.noFoundRequest
 GET             /forbidden          controllers.WelcomeController.forbiddenRequest
 GET             /list               controllers.WelcomeController.listEmployees
++nocsrf
+POST            /postHello          controllers.WelcomeController.postHello
