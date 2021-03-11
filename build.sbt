@@ -27,7 +27,8 @@ val web = (project in file("web"))
       guice,
       caffeine,
       ws,
-      filters
+      filters,
+      "net.codingwell"      %% "scala-guice"                     % "4.1.0",
     )
   )
   .enablePlugins(PlayScala)

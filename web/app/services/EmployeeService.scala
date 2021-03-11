@@ -16,3 +16,9 @@ class EmployeeServiceImpl extends EmployeeService {
   }
 
 }
+
+class InMemoryEmployeeServiceImpl extends EmployeeService {
+  override def listEmployees()(implicit ec: ExecutionContext): Future[Seq[EmpDetail]] = Future {
+    List(EmpDetail("From Memory Shad", 101010, "..."))
+  }
+}
