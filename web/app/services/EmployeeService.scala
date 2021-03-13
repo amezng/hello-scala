@@ -1,5 +1,6 @@
 package services
 
+import javax.inject.Inject
 import models.EmpDetail
 import repo.EmployeeRepo
 
@@ -19,6 +20,12 @@ class EmployeeServiceImpl extends EmployeeService {
 
   override def addEmployee(emp: EmpDetail)(implicit ec: ExecutionContext): Future[Long] = ???
 
+}
+
+class DBEmployeeServiceImpl @Inject()(repo: EmployeeRepo) extends EmployeeService {
+  override def addEmployee(emp: EmpDetail)(implicit ec: ExecutionContext): Future[Long] = ???
+
+  override def listEmployees()(implicit ec: ExecutionContext): Future[Seq[EmpDetail]] = repo.listEmployee()
 }
 
 class InMemoryEmployeeServiceImpl extends EmployeeService {
